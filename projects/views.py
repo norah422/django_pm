@@ -7,12 +7,23 @@ from . import forms
 class Project_list_view(ListView):
     model = models.Project
     template_name = 'project/list.html'
+    paginate_by = 6
+
+    def get_queryset(self):
+        query_set = super().get_queryset()
+        where = {}
+        q = self.request.GET.get('q', None)
+        if q:
+            where['title__icontains'] = q
+        return query_set.filter(**where)
+
 
 class Project_creat_view(CreateView):
     model = models.Project
     form_class = forms.Porject_Create_Form
     template_name = 'project/create.html'
     success_url = reverse_lazy('Project_list')
+
 
 class Project_update_view(UpdateView):
     model = models.Project
@@ -32,6 +43,7 @@ class Project_delete_view(DeleteView):
 class Task_creat_view(CreateView):
     model = models.Task
     fields = ['project', 'description']
+    template_name = 'project/create.html'
     http_method_names = ['post']
 
     def get_success_url(self):

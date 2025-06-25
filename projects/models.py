@@ -24,7 +24,7 @@ class Project(models.Model):
         choices=Project_status.choices,
         default=Project_status.PENDING
     )
-    created_at = models.DateField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     user = models.ForeignKey(
