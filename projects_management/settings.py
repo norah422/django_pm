@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
 from pathlib import Path
 
 from django.conf.global_settings import INTERNAL_IPS, LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
