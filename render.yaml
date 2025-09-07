@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: django-pm
+    env: python
+    buildCommand: "poetry install"
+    startCommand: "poetry run gunicorn django_pm.wsgi:application"
