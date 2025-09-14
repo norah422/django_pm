@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+import os
 from pathlib import Path
 
 from django.conf.global_settings import INTERNAL_IPS, LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
@@ -80,6 +81,7 @@ WSGI_APPLICATION = 'projects_management.wsgi.application'
 
 DATABASES = {
     'default': {
+        'dj_database_url': 'parse(os.environ.get("postgresql://norah_user:Rai1esuxX0skNuWeLVvLXBAUSmiWVib8@dpg-d2uk51ur433s73ecoaqg-a.oregon-postgres.render.com/norah"))',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django_pm',
         'USER': 'postgres',
