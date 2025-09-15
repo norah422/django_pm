@@ -81,13 +81,13 @@ WSGI_APPLICATION = 'projects_management.wsgi.application'
 
 DATABASES = {
     'default': {
-        'dj_database_url': 'parse(os.environ.get("postgresql://norah_user:Rai1esuxX0skNuWeLVvLXBAUSmiWVib8@dpg-d2uk51ur433s73ecoaqg-a.oregon-postgres.render.com/norah"))',
+        'dj_database_url': 'postgresql://postgres:xVleMqGVRSdZnBdXDKnJyoisfZsBhFgb@postgres.railway.internal:5432/railway',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django_pm',
         'USER': 'postgres',
-        'PASSWORD': 'Aa225588',
-        'HOST':'localhost',
-        'PORT':'',
+        'PASSWORD': 'xVleMqGVRSdZnBdXDKnJyoisfZsBhFgb',
+        'HOST':'postgres.railway.internal',
+        'PORT':'5432',
     }
 }
 
